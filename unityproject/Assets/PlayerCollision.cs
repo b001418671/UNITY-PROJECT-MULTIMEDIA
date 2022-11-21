@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class PlayerCollision : MonoBehaviour
+public class playercollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayerMovment movement;
+    
+    void OnCollisionEnter (Collision collisionInfo)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+       if (collisionInfo.collider.tag == "Obstacle")
+       {
+           movement.enabled = false;
+       }
     }
 }
